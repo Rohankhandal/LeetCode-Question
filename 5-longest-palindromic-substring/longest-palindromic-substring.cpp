@@ -2,7 +2,8 @@ class Solution {
 public:
 
 
-//Naive Approach 
+//Naive Approach   
+//Better Approach using DP
 
     bool isPalindrome(string&s , int start , int end){
         while(start< end)
