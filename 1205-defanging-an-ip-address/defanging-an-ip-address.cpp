@@ -6,8 +6,8 @@ class Solution
             string ans;
             for (int i = 0; i < address.length(); i++)
             {
-                char ch = address[i];
-                if (ch == '.')
+                
+                if (address[i] == '.')
                 {
                     ans.push_back('[');
                     ans.push_back('.');
@@ -15,7 +15,7 @@ class Solution
                 }
                 else
                 {
-                    ans.push_back(ch);
+                    ans.push_back(address[i]);
                 }
             }
             return ans;
