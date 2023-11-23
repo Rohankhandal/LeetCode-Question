@@ -1,5 +1,7 @@
 class Solution {
 public:
+
+//SECOND METHOD  ALSO USING BFS
     vector<int> findDiagonalOrder(vector<vector<int>>& nums) {
         unordered_map<int,vector<int>> mp;  //row+col,elements
 
