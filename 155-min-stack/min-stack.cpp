@@ -9,7 +9,7 @@ public:
         if(st.empty())
         {
             // st={val,val};
-            pair<int,int> p=make_pair(val,val);
+            pair<int,int> p=make_pair(val,val);  //new method to insert elemnt in pair
             st.push_back(p);
         }
         else
