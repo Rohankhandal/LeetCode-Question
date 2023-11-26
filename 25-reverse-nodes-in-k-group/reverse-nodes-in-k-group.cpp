@@ -21,7 +21,7 @@ public:
         }
         return count;
     }
-    ListNode* reverseKGroup(ListNode* head, int k) {
+    ListNode* reverseKGroup(ListNode* &head, int &k) {
         if(head==NULL){
             return head;
         }
