@@ -1,38 +1,21 @@
 class Solution {
 public:
     bool isPalindrome(string s) {
-        string ans="";
-        for(int i=0;i<s.size();i++)
+        string res;
+        for (int i = 0; i < s.length(); i++)
         {
-            
-            if(!isalpha(s[i]) && !isdigit(s[i]))
-            {
-                i++;
-            }
-            if(s[i]>=65 && s[i]<=91)
-            {
-                s[i]=s[i]+32;
-            }
-            if(isalpha(s[i]) || isdigit(s[i]))
-            {
-                ans+=s[i];
-            }
-            
+            if (s[i] >= 'A' && s[i] <= 'Z') res += (s[i] + ('a' - 'A'));
+            else if (s[i] >= 'a' && s[i] <= 'z') res += s[i];
+            else if (s[i] >= '0' && s[i] <= '9') res += s[i];
         }
-        cout<<ans;
-        //check palindrome
-        int l=0;
-        int e=ans.size()-1;
-        while(l<=e)
+        int i = 0;
+        int j = res.length() - 1;
+        while (i < j)
         {
-            if(ans[l]!=ans[e])
-            {
-                return false;
-            }
-            l++;
-            e--;
+            if (res[i] != res[j]) return false;
+            i++;
+            j--;
         }
-        
         return true;
     }
 };
