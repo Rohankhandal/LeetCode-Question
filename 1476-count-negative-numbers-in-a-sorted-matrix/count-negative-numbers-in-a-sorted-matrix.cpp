@@ -1,27 +1,50 @@
-// Method -2
+// Method-1
+// T.C:-O(m+n)
+// S.C:-O(1)
 class Solution {
 public:
-    int bs(vector<int> v, int col){
-        int low=0, high=col-1;
-        while(low<=high){
-            int mid=(low+high)/2;
-            if(v[mid]<0)high=mid-1;
-            else low=mid+1;
-        }
-        if(low>=col)return 0;
-        return col-low;
-    }
     int countNegatives(vector<vector<int>>& grid) {
-        int r=grid.size();
-        int c=grid[0].size();
-        int i,j;
-        int count=0;
-        for(i=0;i<r;i++){
-            count=count+bs(grid[i],c);
+        int m = grid.size(), n = grid[0].size();
+        int ans = 0, up = m-1, left = 0;
+        while(up>=0 and left<n){
+            if(grid[up][left]<0){
+                ans += (n-left);
+                up--;
+            }
+            else if(grid[up][left]>=0){
+                left++;
+            }
         }
-        return count;
+        return ans;
     }
 };
+
+
+
+// Method -2
+// class Solution {
+// public:
+//     int bs(vector<int> v, int col){
+//         int low=0, high=col-1;
+//         while(low<=high){
+//             int mid=(low+high)/2;
+//             if(v[mid]<0)high=mid-1;
+//             else low=mid+1;
+//         }
+//         if(low>=col)return 0;
+//         return col-low;
+//     }
+//     int countNegatives(vector<vector<int>>& grid) {
+//         int r=grid.size();
+//         int c=grid[0].size();
+//         int i,j;
+//         int count=0;
+//         for(i=0;i<r;i++){
+//             count=count+bs(grid[i],c);
+//         }
+//         return count;
+//     }
+// };
 
 
 
